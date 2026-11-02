@@ -866,7 +866,9 @@ button { font: inherit; }
   .dj-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (min-width: 900px) {
-  .dj-grid { grid-template-columns: repeat(5, 1fr); gap: 16px; }
+  /* Exactly four DJs on the Miami bill, so four columns fill the row.
+     Revisit if the lineup grows. */
+  .dj-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
 }
 
 /* ============ PARTNERS ============ */

@@ -61,7 +61,10 @@ python3 -m http.server 8742
 
 ## Still to do
 
-- **Lineup** — `#lineup` has two "TBA" tiles. Swap in DJ photos as names confirm (3:4, ~1400px tall).
+- **Lineup photos** — confirmed: Bobby B. (11–12), Keith B (12–1), Sea Rae (1–2),
+  Blinkdalink (2–3). The four portraits were cropped out of the event flyer, so they are only
+  184×245. They are sharp enough for the tiles but will look soft if the tiles ever get bigger —
+  replace `images/dj-*.jpg` with the originals when they turn up.
 - **VIP** — `#vip` is `hidden`. The SweatPals listing has one $19.99 tier and no VIP tier;
   remove `hidden` once a Miami VIP tier exists. Copy is carried over from Vegas unchanged.
 - **Partners** — Belvedere is in. Add the venue partner tile properly if Astra signs on as one.
