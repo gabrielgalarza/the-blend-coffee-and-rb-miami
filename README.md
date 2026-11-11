@@ -65,8 +65,13 @@ python3 -m http.server 8742
   Blinkdalink (2–3). The four portraits were cropped out of the event flyer, so they are only
   184×245. They are sharp enough for the tiles but will look soft if the tiles ever get bigger —
   replace `images/dj-*.jpg` with the originals when they turn up.
-- **VIP** — `#vip` is `hidden`. The SweatPals listing has one $19.99 tier and no VIP tier;
-  remove `hidden` once a Miami VIP tier exists. Copy is carried over from Vegas unchanged.
+- **VIP** — `#vip` is still `hidden`, but Miami IS selling VIP now (13 sold as of 2026-11-11,
+  $99.99 list, going out nearer $69.99). The blocker is the copy: it is Vegas's, carried over
+  unchanged and never checked against what Miami VIP includes. Check it, then un-hide.
+- **Ticket price goes stale** — the page hard-codes a price in four places (meta, good-to-know,
+  the stat row, the closing CTA). Tiers escalate, so it drifts: it shipped at $19.99 (flash early
+  bird), and by 2026-11-11 GA was ADVANCE TIER 3 at $29.99, $34.92 with fees. Re-check against
+  `event_detail` before any push, or drop the number.
 - **Partners** — Belvedere is in. Add the venue partner tile properly if Astra signs on as one.
 - **Images** — all 43 photos are carried over from past Bay Area / Vegas editions. Swap in
   Miami shots after the event.

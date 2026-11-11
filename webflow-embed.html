@@ -4,10 +4,10 @@
 
 <div id="blend-miami">
 <!--
-  WAITLIST / CHECKOUT
-  Sales had not opened when this page was built, so every CTA opens the
-  SweatPals widget inline, which shows "Notify me" (the waitlist) until sales
-  start and then becomes checkout on its own. No copy change needed on the day.
+  REGISTRATION / CHECKOUT
+  Sales opened 2026-10-26, so every CTA now opens SweatPals checkout inline.
+  The same widget served the waitlist before sales opened and switched itself
+  over, which is why the markup did not change - only the button copy did.
 
   Pattern (same as Blend Fest / SF Fit Fest): an OTT-styled pill button renders
   normally and a transparent SweatPals iframe sits on top of it. The click lands
@@ -34,16 +34,16 @@
     <p style="font-family:var(--display); font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:var(--yellow); margin:0 0 26px;">The Blend comes to Miami · Presented by Belvedere Dirty Brew</p>
     <div class="b-hero__ctas">
       <span class="b-rsvp-trigger">
-        <a class="b-btn b-btn--yellow b-btn--lg" data-register href="https://sweatpals.com/event/the-blend-coffee-and-rb-miami" tabindex="-1" aria-hidden="true">Join the waitlist &#8594;</a>
-        <iframe class="b-rsvp-trigger__frame" title="Join the Blend Miami waitlist"
-                src="https://sweatpals.com/embed/the-blend-coffee-and-rb-miami/buy-ticket?priceMode=several&amp;priceTiersJson=%5B%227aec56ef-54bf-4f25-9172-255dfcd33704%22%5D&amp;size=lg&amp;colorHex=FFD60A&amp;fontFamily=Inter&amp;buttonText=Join%20the%20waitlist&amp;loader=false"></iframe>
+        <a class="b-btn b-btn--yellow b-btn--lg" data-register href="https://sweatpals.com/event/the-blend-coffee-and-rb-miami" tabindex="-1" aria-hidden="true">Register here &#8594;</a>
+        <iframe class="b-rsvp-trigger__frame" title="Register for The Blend Miami"
+                src="https://sweatpals.com/embed/the-blend-coffee-and-rb-miami/buy-ticket?priceMode=several&amp;priceTiersJson=%5B%227aec56ef-54bf-4f25-9172-255dfcd33704%22%5D&amp;size=lg&amp;colorHex=FFD60A&amp;fontFamily=Inter&amp;buttonText=Register%20here&amp;loader=false"></iframe>
       </span>
       <a class="b-btn b-btn--ghost b-btn--lg" href="#included">See what's included</a>
     </div>
     <div class="b-hero__partners">
       <span class="b-hero__partners-label">Good to know</span>
       <p style="font-size:14px; color:rgba(255,255,255,.82); margin:0; max-width:580px;">
-        Tickets $19.99 · 21+ event · Astra Rooftop Garden, Miami · First 50 guests to arrive get a
+        Tickets $29.99 · 21+ event · Astra Rooftop Garden, Miami · First 50 guests to arrive get a
         complimentary coffee or matcha · Dress code: coffee tones, matcha colors accepted ·
         Capacity is strictly enforced.
       </p>
@@ -66,7 +66,7 @@
         </p>
       </div>
       <div class="b-vision__stats">
-        <div class="b-stat"><div class="b-stat__num">$19.99</div><div class="b-stat__label">Tickets</div></div>
+        <div class="b-stat"><div class="b-stat__num">$29.99</div><div class="b-stat__label">Tickets</div></div>
         <div class="b-stat"><div class="b-stat__num">$300</div><div class="b-stat__label">Sing-along prize</div></div>
         <div class="b-stat"><div class="b-stat__num">4hrs</div><div class="b-stat__label">Of programming</div></div>
         <div class="b-stat"><div class="b-stat__num">50</div><div class="b-stat__label">Complimentary coffees &amp; matchas</div></div>
@@ -153,9 +153,11 @@
 </section>
 
 <!--
-  VIP / MEMBERS. Hidden for Miami: the SweatPals listing has a single $19.99
-  tier and no VIP tier, so nothing here is sellable yet. Remove `hidden` once a
-  Miami VIP tier exists; the copy below is carried over from Vegas unchanged.
+  VIP / MEMBERS. Still hidden, but no longer because the tier is missing: as of
+  2026-11-11 Miami IS selling VIP (13 sold, $99.99 list, going out around $69.99).
+  It stays hidden because the copy below is Vegas's, carried over unchanged and
+  never checked against what Miami VIP actually includes. Check it, then remove
+  `hidden` - do not just un-hide it.
 -->
 <section class="b-band b-band--dark" id="vip" hidden>
   <div class="b-container">
@@ -345,21 +347,20 @@
   </div>
 </section>
 
-<!-- WAITLIST / REGISTER -->
+<!-- REGISTER -->
 <section class="b-band b-band--yellow" id="register">
   <div class="b-container b-container--narrow b-text-center">
     <span class="b-kicker">Get in</span>
-    <h2 class="b-h2" style="margin-bottom:16px;">Join the waitlist and get first access.</h2>
+    <h2 class="b-h2" style="margin-bottom:16px;">Register here and lock in your spot.</h2>
     <p style="margin:0 auto 32px; max-width:560px; font-size:16px; color:var(--ink-2);">
-      Tickets are $19.99. Saturday, December 5, 11 AM &ndash; 3 PM at Astra Rooftop Garden, Miami. Spots are
-      limited and capacity is strictly enforced &mdash; join the waitlist and you'll be first to know the moment
-      tickets open.
+      Tickets are $29.99. Saturday, December 5, 11 AM &ndash; 3 PM at Astra Rooftop Garden, Miami. Spots are
+      limited and capacity is strictly enforced.
     </p>
     <div class="b-cta-row">
       <span class="b-rsvp-trigger b-rsvp-trigger--lg">
-        <a class="b-btn b-btn--black b-btn--lg" data-register href="https://sweatpals.com/event/the-blend-coffee-and-rb-miami" tabindex="-1" aria-hidden="true">Join the waitlist &#8594;</a>
-        <iframe class="b-rsvp-trigger__frame" title="Join the Blend Miami waitlist"
-                src="https://sweatpals.com/embed/the-blend-coffee-and-rb-miami/buy-ticket?priceMode=several&amp;priceTiersJson=%5B%227aec56ef-54bf-4f25-9172-255dfcd33704%22%5D&amp;size=lg&amp;colorHex=000000&amp;fontFamily=Inter&amp;buttonText=Join%20the%20waitlist&amp;loader=false"></iframe>
+        <a class="b-btn b-btn--black b-btn--lg" data-register href="https://sweatpals.com/event/the-blend-coffee-and-rb-miami" tabindex="-1" aria-hidden="true">Register here &#8594;</a>
+        <iframe class="b-rsvp-trigger__frame" title="Register for The Blend Miami"
+                src="https://sweatpals.com/embed/the-blend-coffee-and-rb-miami/buy-ticket?priceMode=several&amp;priceTiersJson=%5B%227aec56ef-54bf-4f25-9172-255dfcd33704%22%5D&amp;size=lg&amp;colorHex=000000&amp;fontFamily=Inter&amp;buttonText=Register%20here&amp;loader=false"></iframe>
       </span>
     </div>
     <p style="margin:24px 0 0; font-size:14px; color:var(--ink-2);">
@@ -371,8 +372,8 @@
 
 <!--
   SweatPals checkout script. Must load after the iframes above. It finds the
-  buy-ticket iframes, listens for their click messages and opens the waitlist /
-  checkout modal over this page. enableAutoEmbed=false because every button on
+  buy-ticket iframes, listens for their click messages and opens the checkout
+  modal over this page. enableAutoEmbed=false because every button on
   this page is placed by hand; leaving it true appends a stray second widget.
 -->
 <script src="https://sweatpals.com/static/embed/event/checkout/script.js?priceMode=several&enableAutoEmbed=false&eventAlias=the-blend-coffee-and-rb-miami&size=lg&colorHex=000000&fontFamily=Poppins&priceTiersJson=%255B%25227aec56ef-54bf-4f25-9172-255dfcd33704%2522%255D"></script>
