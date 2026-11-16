@@ -4,19 +4,19 @@
 
 <div id="blend-miami">
 <!--
-  REGISTRATION / CHECKOUT
-  Sales opened 2026-10-26, so every CTA now opens SweatPals checkout inline.
-  The same widget served the waitlist before sales opened and switched itself
-  over, which is why the markup did not change - only the button copy did.
+  REGISTRATION
+  Every CTA is a plain link to the SweatPals event page, per the house rule in
+  the OTT page template. This replaced a transparent-iframe overlay that opened
+  checkout in a modal on this page.
 
-  Pattern (same as Blend Fest / SF Fit Fest): an OTT-styled pill button renders
-  normally and a transparent SweatPals iframe sits on top of it. The click lands
-  on SweatPals' own button inside the iframe; the checkout script at the end of
-  <body> intercepts it and opens the modal over this page instead of navigating
-  away. Keeps OTT's button styling and keeps the visitor on the page.
+  Two reasons it went, both from the template's notes and from this page:
+  the overlay returned "event not found" for Gabriel on Vegas, and it had to
+  name one price tier id, which went stale the moment the early-bird tier sold
+  out - the page went on advertising $19.99 after GA had moved to $29.99.
+  The event page always sells whatever tier is current, and showed the waitlist
+  on its own before sales opened.
 
-  Miami event alias : the-blend-coffee-and-rb-miami
-  Miami price tier  : 7aec56ef-54bf-4f25-9172-255dfcd33704
+  Miami event alias: the-blend-coffee-and-rb-miami
 -->
 <!-- HERO -->
 <section class="b-hero" id="top">
@@ -33,11 +33,7 @@
     </h1>
     <p style="font-family:var(--display); font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:var(--yellow); margin:0 0 26px;">The Blend comes to Miami · Presented by Belvedere Dirty Brew</p>
     <div class="b-hero__ctas">
-      <span class="b-rsvp-trigger">
-        <a class="b-btn b-btn--yellow b-btn--lg" data-register href="https://sweatpals.com/event/the-blend-coffee-and-rb-miami" tabindex="-1" aria-hidden="true">Register here &#8594;</a>
-        <iframe class="b-rsvp-trigger__frame" title="Register for The Blend Miami"
-                src="https://sweatpals.com/embed/the-blend-coffee-and-rb-miami/buy-ticket?priceMode=several&amp;priceTiersJson=%5B%227aec56ef-54bf-4f25-9172-255dfcd33704%22%5D&amp;size=lg&amp;colorHex=FFD60A&amp;fontFamily=Inter&amp;buttonText=Register%20here&amp;loader=false"></iframe>
-      </span>
+      <a class="b-btn b-btn--yellow b-btn--lg" data-register href="https://sweatpals.com/event/the-blend-coffee-and-rb-miami" target="_blank" rel="noopener">Register here &#8594;</a>
       <a class="b-btn b-btn--ghost b-btn--lg" href="#included">See what's included</a>
     </div>
     <div class="b-hero__partners">
@@ -357,11 +353,7 @@
       limited and capacity is strictly enforced.
     </p>
     <div class="b-cta-row">
-      <span class="b-rsvp-trigger b-rsvp-trigger--lg">
-        <a class="b-btn b-btn--black b-btn--lg" data-register href="https://sweatpals.com/event/the-blend-coffee-and-rb-miami" tabindex="-1" aria-hidden="true">Register here &#8594;</a>
-        <iframe class="b-rsvp-trigger__frame" title="Register for The Blend Miami"
-                src="https://sweatpals.com/embed/the-blend-coffee-and-rb-miami/buy-ticket?priceMode=several&amp;priceTiersJson=%5B%227aec56ef-54bf-4f25-9172-255dfcd33704%22%5D&amp;size=lg&amp;colorHex=000000&amp;fontFamily=Inter&amp;buttonText=Register%20here&amp;loader=false"></iframe>
-      </span>
+      <a class="b-btn b-btn--black b-btn--lg" data-register href="https://sweatpals.com/event/the-blend-coffee-and-rb-miami" target="_blank" rel="noopener">Register here &#8594;</a>
     </div>
     <p style="margin:24px 0 0; font-size:14px; color:var(--ink-2);">
       Questions? DM <a href="https://instagram.com/overthetopxp" target="_blank" rel="noopener" style="font-weight:600; text-decoration:underline;">@overthetopxp</a>
@@ -369,14 +361,6 @@
     </p>
   </div>
 </section>
-
-<!--
-  SweatPals checkout script. Must load after the iframes above. It finds the
-  buy-ticket iframes, listens for their click messages and opens the checkout
-  modal over this page. enableAutoEmbed=false because every button on
-  this page is placed by hand; leaving it true appends a stray second widget.
--->
-<script src="https://sweatpals.com/static/embed/event/checkout/script.js?priceMode=several&enableAutoEmbed=false&eventAlias=the-blend-coffee-and-rb-miami&size=lg&colorHex=000000&fontFamily=Poppins&priceTiersJson=%255B%25227aec56ef-54bf-4f25-9172-255dfcd33704%2522%255D"></script>
 </div>
 
 <script src="https://gabrielgalarza.github.io/the-blend-coffee-and-rb-miami/embed.js?v=1"></script>

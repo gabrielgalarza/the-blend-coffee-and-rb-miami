@@ -145,10 +145,6 @@ button { font: inherit; }
 }
 .nav__links a:hover { color: var(--yellow); }
 .nav .btn { margin-left: auto; }
-/* The nav CTA is wrapped in .rsvp-trigger for the SweatPals overlay, so the
-   auto margin has to move to the wrapper or the pill sticks to the logo. */
-.nav .rsvp-trigger { margin-left: auto; }
-.nav .rsvp-trigger .btn { margin-left: 0; }
 @media (min-width: 880px) {
   .nav__links { display: flex; }
   .nav .btn { margin-left: 0; }
@@ -272,9 +268,7 @@ button { font: inherit; }
   gap: 12px;
   margin-bottom: 48px;
 }
-.hero__ctas .btn--lg,
-.hero__ctas .rsvp-trigger { min-width: 260px; }
-.hero__ctas .rsvp-trigger .btn--lg { width: 100%; min-width: 0; }
+.hero__ctas .btn--lg { min-width: 260px; }
 .hero__partners {
   border-top: 1px solid rgba(255,255,255,.15);
   padding-top: 22px;
@@ -1501,81 +1495,3 @@ body.is-rsvp-open { overflow: hidden; }
   pointer-events: none;
 }
 
-/* ============ RSVP AUTO-EMBED (Sweatpals auto-injected button) ============ */
-/* With enableAutoEmbed=true Sweatpals injects its own styled button next to
-   the script tag. The wrapper just reserves layout space and sets sizing. */
-.rsvp-autoembed {
-  display: inline-block;
-  vertical-align: middle;
-}
-.rsvp-autoembed--sm { min-width: 130px; }
-.rsvp-autoembed--lg { min-width: 240px; }
-
-/* ============ RSVP TRIGGER (Sweatpals iframe overlay) ============ */
-/* Visible OTT-styled pill button sits behind; the Sweatpals iframe
-   sits absolutely on top with opacity 0. Clicks land on the iframe's
-   Sweatpals button, which the checkout script (at end of body)
-   intercepts to open the registration modal inline.
-   Pattern from SF Fit Fest (PR #52). */
-.rsvp-trigger {
-  position: relative;
-  display: inline-block;
-  line-height: 0;
-}
-.rsvp-trigger .btn { line-height: 1.55; }
-/* Wide variant for the standalone CTA band, so the pill keeps the same
-   footprint as a plain .btn--lg sitting next to it. */
-.rsvp-trigger--lg { min-width: 260px; }
-.rsvp-trigger--lg .btn--lg { width: 100%; min-width: 0; }
-.cta-row .rsvp-trigger { display: inline-block; }
-.rsvp-trigger__frame {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  opacity: 0;
-  cursor: pointer;
-  z-index: 2;
-}
-
-/* Pre-Register modal: loads the Sweatpals "Join waitlist" early-access form. */
-.sp-modal {
-  border: 0;
-  padding: 0;
-  border-radius: 18px;
-  width: min(480px, 92vw);
-  max-height: 90vh;
-  background: var(--white);
-  overflow: hidden;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
-}
-.sp-modal::backdrop {
-  background: rgba(0, 0, 0, 0.6);
-}
-.sp-modal__bar {
-  display: flex;
-  justify-content: flex-end;
-  padding: 8px 10px 0;
-}
-.sp-modal__close {
-  border: 0;
-  background: transparent;
-  font-size: 26px;
-  line-height: 1;
-  cursor: pointer;
-  color: var(--ink);
-  width: 38px;
-  height: 38px;
-  border-radius: 999px;
-}
-.sp-modal__close:hover {
-  background: var(--gray-100);
-}
-.sp-modal__frame {
-  display: block;
-  width: 100%;
-  height: 620px;
-  max-height: calc(90vh - 46px);
-  border: 0;
-}

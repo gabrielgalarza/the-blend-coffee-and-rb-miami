@@ -6,34 +6,42 @@ Belvedere Dirty Brew. Tickets $19.99. 21+.
 
 Built from the Vegas page (`../the blend vegas`), same structure and build pipeline.
 
-## Waitlist
+## Registration
 
-Sales had not opened when this was built, so **every CTA opens the SweatPals widget
-inline**, which shows the "Join waitlist" form (name, phone, email, SMS consent) until
-sales start and then becomes checkout on its own. No copy change is needed on the day
-tickets drop.
+Every CTA is a plain link to the SweatPals event page, opened in a new tab:
 
-How it works — the pattern used on Blend Fest and SF Fit Fest:
+```
+https://sweatpals.com/event/the-blend-coffee-and-rb-miami
+```
 
-- An OTT-styled pill button renders normally inside `<span class="rsvp-trigger">`.
-- A transparent SweatPals iframe (`.rsvp-trigger__frame`) sits on top of it at `opacity:0`.
-- The click lands on SweatPals' own button inside that iframe. The checkout script at the
-  end of `<body>` intercepts it and opens the modal over the page instead of navigating away.
+That is the house rule in the OTT page template, and this page had to be moved onto it.
+It previously used a transparent-iframe overlay that opened checkout in a modal here.
+Two things killed that:
 
-Event constants:
+- The template's notes record the overlay returning "event not found" for Gabriel on Vegas.
+- It had to name a single price tier id. That went stale the moment the early-bird tier
+  sold out, and the page kept advertising $19.99 after GA had moved to $29.99.
+
+The event page always sells whichever tier is current, and before sales open it shows its
+own "get notified" button, so one link covers the waitlist phase too.
+
+The `[data-register]` attribute stays on all three links: `script.js` uses it to fire the
+Meta Pixel `Lead` event.
 
 | | |
 |---|---|
 | Event alias | `the-blend-coffee-and-rb-miami` |
-| Price tier | `7aec56ef-54bf-4f25-9172-255dfcd33704` |
 | SweatPals page | https://sweatpals.com/event/the-blend-coffee-and-rb-miami |
 
-`enableAutoEmbed=false` on the checkout script: every button here is placed by hand, and
-leaving it `true` appends a stray second widget at the end of the page.
+Signups and sales land in SweatPals, not in this repo. Read them with the `sweatpals` MCP
+server (`event_detail`, `waitlist_report`); run `sweatpals_sync` first.
 
-Signups land in SweatPals, not in this repo. Read them with the `sweatpals` MCP server
-(`waitlist_report`, or `event_detail` for `waitlist_count`); run `sweatpals_sync` first,
-since Miami is not in the local mirror until sales open.
+### Known dead CSS
+
+`styles.css` still carries `.rsvp-frame*` and `.rsvp-modal*` (~190 lines), unreferenced by
+`index.html` or `script.js`. They are left over from earlier popup attempts on LA/Vegas and
+predate the overlay removal. Safe to delete; left in place to avoid an unrelated edit during
+an active sale.
 
 ## Build
 
