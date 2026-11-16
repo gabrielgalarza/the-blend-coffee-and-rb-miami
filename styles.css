@@ -202,6 +202,10 @@ button { font: inherit; }
   object-fit: cover;
   z-index: 0;
 }
+/* Hidden until script.js decides this visitor should get motion; it then sets
+   src and flips this to block. Without that the element renders its poster,
+   which is the same still as .hero__bg underneath. */
+.hero__bg--video { display: none; }
 .hero__overlay {
   position: absolute;
   inset: 0;

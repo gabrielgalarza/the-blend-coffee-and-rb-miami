@@ -198,6 +198,10 @@
   object-fit: cover;
   z-index: 0;
 }
+/* Hidden until script.js decides this visitor should get motion; it then sets
+   src and flips this to block. Without that the element renders its poster,
+   which is the same still as .b-hero__bg underneath. */
+#blend-miami .b-hero__bg--video{ display: none; }
 #blend-miami .b-hero__overlay{
   position: absolute;
   inset: 0;

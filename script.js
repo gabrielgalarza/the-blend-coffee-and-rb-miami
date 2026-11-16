@@ -146,3 +146,23 @@ document.querySelectorAll('[data-register]').forEach((el) => {
     }
   });
 });
+
+// Hero background loop. Anything wider than a phone, and never when the visitor
+// has asked for
+// reduced motion - the file is ~7MB and the phone hero is cropped so tightly
+// that most of the frame is off-screen anyway. Attaching src here rather than in
+// the markup is what keeps those visitors from downloading it.
+const heroVideo = document.querySelector('[data-hero-video]');
+if (
+  heroVideo &&
+  window.matchMedia('(min-width: 640px)').matches &&
+  !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+) {
+  heroVideo.src = heroVideo.dataset.heroVideo;
+  heroVideo.style.display = 'block';
+  // Autoplay can still be refused (battery saver, data saver). Fall back to the still.
+  const playing = heroVideo.play();
+  if (playing && typeof playing.catch === 'function') {
+    playing.catch(() => { heroVideo.style.display = 'none'; });
+  }
+}

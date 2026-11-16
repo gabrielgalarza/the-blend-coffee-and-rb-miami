@@ -142,8 +142,12 @@ def main():
         + m.group(3),
         body,
     )
+    # poster and data-hero-video carry asset paths too: the hero <video> takes its
+    # still from poster= and its source from data-hero-video= (script.js copies that
+    # into src at runtime). Miss either and the embed 404s them against
+    # overthetopxp.com while the standalone page keeps working.
     body = re.sub(
-        r'(src|href)="(images/|logos/)',
+        r'(src|href|poster|data-hero-video)="(images/|logos/)',
         lambda m: '%s="%s%s' % (m.group(1), BASE, m.group(2)),
         body,
     )

@@ -1,6 +1,6 @@
 <!-- The Blend Miami -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap">
-<link rel="stylesheet" href="https://gabrielgalarza.github.io/the-blend-coffee-and-rb-miami/embed.css?v=1">
+<link rel="stylesheet" href="https://gabrielgalarza.github.io/the-blend-coffee-and-rb-miami/embed.css?v=4">
 
 <div id="blend-miami">
 <!--
@@ -21,6 +21,11 @@
 <!-- HERO -->
 <section class="b-hero" id="top">
   <img class="b-hero__bg" src="https://gabrielgalarza.github.io/the-blend-coffee-and-rb-miami/images/hero.jpg" alt="The Blend Coffee &amp; R&amp;B Day Party crowd" />
+  <!-- Hero loop. src is attached by script.js, not written here, so phones and
+       reduced-motion visitors never download the file at all. The poster is the
+       same still as the img above, so there is nothing to see while it buffers. -->
+  <video class="b-hero__bg b-hero__bg--video" muted loop playsinline preload="none"
+         poster="https://gabrielgalarza.github.io/the-blend-coffee-and-rb-miami/images/hero.jpg" aria-hidden="true" data-hero-video="https://gabrielgalarza.github.io/the-blend-coffee-and-rb-miami/images/hero.mp4"></video>
   <div class="b-hero__overlay"></div>
   <div class="b-hero__content">
     <div class="b-hero__eyebrow">
@@ -363,4 +368,4 @@
 </section>
 </div>
 
-<script src="https://gabrielgalarza.github.io/the-blend-coffee-and-rb-miami/embed.js?v=1"></script>
+<script src="https://gabrielgalarza.github.io/the-blend-coffee-and-rb-miami/embed.js?v=4"></script>

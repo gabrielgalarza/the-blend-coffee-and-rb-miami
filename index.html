@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="styles.css?v=1" />
+<link rel="stylesheet" href="styles.css?v=4" />
 
 <!-- Meta Pixel Code (OTT pixel, same as Vegas/LA) -->
 <script>
@@ -73,6 +73,11 @@ src="https://www.facebook.com/tr?id=1495548463835448&ev=PageView&noscript=1"
 <!-- HERO -->
 <section class="hero" id="top">
   <img class="hero__bg" src="images/hero.jpg" alt="The Blend Coffee &amp; R&amp;B Day Party crowd" />
+  <!-- Hero loop. src is attached by script.js, not written here, so phones and
+       reduced-motion visitors never download the file at all. The poster is the
+       same still as the img above, so there is nothing to see while it buffers. -->
+  <video class="hero__bg hero__bg--video" muted loop playsinline preload="none"
+         poster="images/hero.jpg" aria-hidden="true" data-hero-video="images/hero.mp4"></video>
   <div class="hero__overlay"></div>
   <div class="hero__content">
     <div class="hero__eyebrow">
@@ -414,6 +419,6 @@ src="https://www.facebook.com/tr?id=1495548463835448&ev=PageView&noscript=1"
   </div>
 </section>
 
-<script src="script.js?v=1"></script>
+<script src="script.js?v=4"></script>
 </body>
 </html>
